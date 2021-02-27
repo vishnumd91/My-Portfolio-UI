@@ -1,10 +1,10 @@
 import React from 'react';
+import Navigation from './components/navigation';
 import './index.css';
 function App() {
     return (
         <div>
-            <h1 className='a' style={{color: 'red'}}>My Portfolio</h1>
-
+          <Navigation></Navigation>
         </div>
     )
 }
