@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const HTMLPlugin = require('html-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
