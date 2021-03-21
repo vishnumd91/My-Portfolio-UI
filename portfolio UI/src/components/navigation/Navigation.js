@@ -1,6 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+import { navigationData } from '/src/constants';
 
 function Navigation() {
+
+  const navigationHeading = navigationData || {};
+
   return (
     <div id='page-top'>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
@@ -11,12 +17,11 @@ function Navigation() {
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav">
-                    <li className="nav-item"><a className="nav-link js-scroll-trigger" href="#about">About</a></li>
-                    <li className="nav-item"><a className="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
-                    <li className="nav-item"><a className="nav-link js-scroll-trigger" href="#education">Education</a></li>
-                    <li className="nav-item"><a className="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
-                    <li className="nav-item"><a className="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
-                    <li className="nav-item"><a className="nav-link js-scroll-trigger" href="#awards">Awards</a></li>
+                  {navigationHeading.map(headings =>
+                    <li key = {headings.id} className="nav-item nav-link">
+                      <Link target='_blank' to = '/about' className = 'nav-link'>{headings.heading}</Link>
+                    </li>
+                    )}
                 </ul>
             </div>
         </nav>

@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+
+import { Link } from 'react-router-dom';
 
 function About() {
   return (
     <div className="container-fluid p-0">
+            <Link to = '/'>Back to Home</Link>
             {/* <!-- About--> */}
             <section className="resume-section" id="about">
                 <div className="resume-section-content">
@@ -11,7 +14,7 @@ function About() {
                         <span className="text-primary"> M D</span>
                     </h1>
                     <div className="subheading mb-5">
-                        120 Malayamchath House · Chalissery, PO 679536 · (+91) 9605774685 ·
+                        120 Malayamchath House · Palakkad, Kerala, Pin - 679536 · (+91) 9605774685 ·
                         <a href="mailto:name@email.com">VISHNUDIVAKARAN1@GMAIL.COM</a>
                     </div>
                     <p className="lead mb-5">I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
