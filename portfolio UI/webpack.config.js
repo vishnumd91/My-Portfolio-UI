@@ -10,10 +10,16 @@ dotenv.config();
 const PORT = process.env.PORT || 3000;
 
 module.exports = {
+    entry: {
+      "app": "./src/index.js"
+    },
+
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js'
     },
+
+    devtool: "source-map",
 
     module: {
         rules: [
@@ -25,6 +31,12 @@ module.exports = {
                         loader: "babel-loader"
                     }
                 ]
+            },
+
+            {
+              test: /\.js$/,
+              enforce: 'pre',
+              use: ['source-map-loader'],
             },
 
             {

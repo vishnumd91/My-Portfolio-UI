@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import Navigation from './components/navigation/Navigation';
 import About from './components/about/About';
+import Education from './components/education/Education';
 function App() {
     return (
         <div>
@@ -15,6 +16,9 @@ function App() {
 
             <Route path = '/about'>
               <About />
+            </Route>
+            <Route path = '/education'>
+              <Education />
             </Route>
           </Switch>
         </div>
