@@ -19,7 +19,7 @@ function Navigation() {
                 <ul className="navbar-nav">
                   {navigationHeading.map(headings =>
                     <li key = {headings.id} className="nav-item nav-link">
-                      <Link target='_blank' to = '/about' className = 'nav-link'>{headings.heading}</Link>
+                      <Link target='_blank' to = {`/${headings.heading.toLowerCase()}`} className = 'nav-link'>{headings.heading}</Link>
                     </li>
                     )}
                 </ul>
