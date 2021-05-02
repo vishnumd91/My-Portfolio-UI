@@ -1,5 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import Experience from '../experience/Experience';
+import About from '../about/About';
+import Education from '../education/Education';
+
 
 import { navigationData } from '/src/constants';
 
@@ -19,12 +24,26 @@ function Navigation() {
                 <ul className="navbar-nav">
                   {navigationHeading.map(headings =>
                     <li key = {headings.id} className="nav-item nav-link">
-                      <Link target='_blank' to = {`/${headings.heading.toLowerCase()}`} className = 'nav-link'>{headings.heading}</Link>
+                      <Link to = {`/${headings.heading.toLowerCase()}`} className = 'nav-link'>{headings.heading}</Link>
                     </li>
                     )}
                 </ul>
             </div>
         </nav>
+        <Switch>
+
+            <Route exact path = '/'>
+              <About />
+              <Experience />
+              <Education />
+            </Route>
+
+            <Route path = '/about' component = {About} />
+
+            <Route path = '/education' component = {Education} />
+
+            <Route path = '/experience' component = {Experience} />
+        </Switch>
 
     </div>
   )
