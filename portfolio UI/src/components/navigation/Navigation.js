@@ -7,6 +7,7 @@ import Education from '../education/Education';
 
 
 import { navigationData } from '/src/constants';
+import Skills from '../skills/Skills';
 
 function Navigation() {
 
@@ -36,6 +37,7 @@ function Navigation() {
               <About />
               <Experience />
               <Education />
+              <Skills />
             </Route>
 
             <Route path = '/about' component = {About} />
@@ -43,6 +45,8 @@ function Navigation() {
             <Route path = '/education' component = {Education} />
 
             <Route path = '/experience' component = {Experience} />
+
+            <Route path = '/skills' component = {Skills} />
         </Switch>
 
     </div>
