@@ -26,7 +26,8 @@ const Admin = () => {
       history.push('/dashboard');
     }
     else {
-      history.push('/admin');
+      // eslint-disable-next-line no-undef
+      alert('Wrong Credentials');
     }
     setUserName('');
     setPassword('');

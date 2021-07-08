@@ -41,6 +41,7 @@ html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  scroll-behavior: smooth;
 }
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
@@ -9974,9 +9975,9 @@ body {
 }
 
 @media (min-width: 992px) {
-  body {
-    padding-top: 0;
-    padding-left: 17rem;
+  body .container-fluid  {
+    padding-top: 0 !important;
+    padding-left: 17rem !important;
   }
 }
 h1,
