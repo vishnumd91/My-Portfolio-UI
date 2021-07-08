@@ -1,6 +1,6 @@
 .wrapper {
-  width: 60vh;
-  height: 55vh;
+  width: 320px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,6 +9,7 @@
   border-radius: 8px;
   overflow: hidden;
   background-color: #fff;
+  margin: auto;
 }
 .heading {
   width: 100%;
@@ -32,16 +33,17 @@
   width: 30%;
   background-color: #007bff;
 }
+.alert {
+  margin-top: 10px;
+}
+.wrapper button {
+  margin-bottom: 40px;
+}
 
 @media (min-width: 992px) {
   .wrapper {
-    margin-left: 275px;
-    height: 50vh;
-  }
-}
-@media (max-width: 480px) {
-  .wrapper {
-    height: 75vh;
+    margin: auto;
+    width: 40%;
   }
 }
 

@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-// import { Route, Switch } from 'react-router-dom';
 import Experience from '../experience/Experience';
 import About from '../about/About';
 import Education from '../education/Education';
@@ -42,35 +40,17 @@ function Navigation() {
           <ul className="navbar-nav">
             {navigationHeading.map((headings) => (
               <li key={headings.id} className="nav-item nav-link">
-                <Link
-                  to={`/${headings.heading.toLowerCase()}`}
+                <a
+                  href={`#${headings.heading.toLowerCase()}`}
                   className="nav-link"
                 >
                   {headings.heading}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
         </div>
       </nav>
-      {/* <Switch>
-
-            <Route exact path = '/'>
-              <About />
-              <Experience />
-              <Education />
-              <Skills />
-            </Route>
-
-            <Route path = '/about' component = {About} />
-
-            <Route path = '/education' component = {Education} />
-
-            <Route path = '/experience' component = {Experience} />
-
-            <Route path = '/skills' component = {Skills} />
-        </Switch> */}
-
       <About />
       <Experience />
       <Education />

@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
 
 function About() {
   return (
     <div className="container-fluid p-0">
-            <Link to = '/'>Back to Home</Link>
             {/* <!-- About--> */}
             <section className="resume-section" id="about">
                 <div className="resume-section-content">

@@ -26,7 +26,7 @@ const Admin = () => {
       history.push('/dashboard');
     }
     else {
-      history.push('/admin');
+      alert('Wrong Credentials');
     }
     setUserName('');
     setPassword('');

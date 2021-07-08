@@ -2,7 +2,7 @@ import React from 'react';
 
 function Education() {
   return (
-    <div>
+    <div className='container-fluid'>
             <section className="resume-section" id="education">
                 <div className="resume-section-content">
                     <h2 className="mb-5">Education</h2>
