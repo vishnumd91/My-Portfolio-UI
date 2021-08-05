@@ -29,6 +29,7 @@ const Admin = () => {
       // eslint-disable-next-line no-undef
       alert('Wrong Credentials');
     }
+    //Line 33 and 34 clears the text input field after user submits the data to be posted
     setUserName('');
     setPassword('');
   }
