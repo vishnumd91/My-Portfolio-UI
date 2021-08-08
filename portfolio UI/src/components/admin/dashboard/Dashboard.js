@@ -1,11 +1,30 @@
-import React from 'react'
+import { Grid } from "@material-ui/core";
+import React from "react";
+import CardItem from "./Card";
+import NavBar from "./Navbar";
 
 const Dashboard = () => {
   return (
     <div>
-      <h1>This is Admin Dashboard</h1>
+      <NavBar />
+      <Grid container>
+        <Grid item sm={6}>
+          <CardItem
+            title="Add Details"
+            description="Click this card to add new details about yourself"
+            buttonText="Add"
+          />
+        </Grid>
+        <Grid item sm={6}>
+          <CardItem
+            title="Edit Details"
+            description="Click this card to edit the details that are already added"
+            buttonText="Edit"
+          />
+        </Grid>
+      </Grid>
     </div>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;
