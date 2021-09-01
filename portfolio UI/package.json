@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack serve --config=webpack.config.dev.js --open",
     "build": "cross-env NODE_ENV=production webpack --config=webpack.config.prod.js",
-    "build-dev": "cross-env NODE_ENV=production webpack --config=webpack.config.dev.js",
-    "lint": "eslint src/**/*.js"
+    "build-dev": "cross-env NODE_ENV=development webpack --config=webpack.config.dev.js",
+    "lint": "eslint src/**/*.js",
+    "analyze": "webpack-bundle-analyzer --port 5002 build/stats.json"
   },
   "repository": {
     "type": "git",
@@ -42,6 +43,7 @@
     "optimize-css-assets-webpack-plugin": "^6.0.1",
     "terser-webpack-plugin": "^5.1.4",
     "webpack": "^5.17.0",
+    "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^4.4.0",
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.8.0"
@@ -52,7 +54,6 @@
     "@material-ui/styles": "^4.11.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-router-dom": "^5.2.0",
-    "source-map-loader": "^2.0.1"
+    "react-router-dom": "^5.2.0"
   }
 }

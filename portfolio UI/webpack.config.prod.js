@@ -8,10 +8,27 @@ const common = require("./webpack.config.common");
 module.exports = merge(common, {
   mode: "production",
 
-  devtool: "source-map",
+  devtool: false,
 
+  // performance object will restrict the size of the output bundle
+  performance: {
+    hints: false, // disable performance warnings
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
+  },
+
+  // optimization object will optimize the output bundle by splitting into different chunks
   optimization: {
     minimize: true,
+    splitChunks: {
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendors",
+          chunks: "all",
+        },
+      },
+    },
     minimizer: [
       new OptimizeCssAssetsPlugin({
         cssProcessorOptions: {
@@ -30,9 +47,9 @@ module.exports = merge(common, {
           parse: {},
           compress: {},
           mangle: true, // Note `mangle.properties` is `false` by default.
-          module: false
-      },
-    }),
+          module: false,
+        },
+      }),
     ],
   },
 });

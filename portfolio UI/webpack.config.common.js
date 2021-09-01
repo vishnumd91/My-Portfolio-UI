@@ -2,6 +2,7 @@
 const HTMLPlugin = require("html-webpack-plugin");
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const webpack = require("webpack");
 const dotenv = require("dotenv");
@@ -30,13 +31,6 @@ module.exports = {
           },
         ],
       },
-
-      // {
-      //   test: /\.js$/,
-      //   enforce: "pre",
-      //   use: ["source-map-loader"],
-      // },
-
       {
         test: /\.html$/,
         use: [
@@ -69,11 +63,16 @@ module.exports = {
     }),
 
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
+      filename: "[name].[contenthash].css",
     }),
     new CleanWebpackPlugin(),
     new webpack.DefinePlugin({
       NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'disabled',
+      generateStatsFile: true,
+      statsOptions: { source: false }
     }),
   ],
 };
