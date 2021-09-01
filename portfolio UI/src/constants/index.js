@@ -23,25 +23,18 @@ export const navigationData = [
 
 export const experienceData = [
   {
-    heading: "Senior Web Developer",
-    subHeading: "Intelitec Solutions",
+    heading: "Associate Software Developer",
+    subHeading: "UST Global, Bangalore, India",
     content:
-      "Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.",
-    workExperience: "March 2013 - Present",
+      "Worked closely with other team members in tasks such as troubleshooting and debugging. Modified existing software systems to enhance performance and add new features. Participated in design and planning exercises for future software rollouts. Contributed ideas and suggestions in team meetings and delivered updates on deadlines, designs and enhancements",
+    workExperience: "February 2020 - Present",
   },
   {
-    heading: "Web Developer",
-    subHeading: "Intelitec Solutions",
+    heading: "Trainee Software Developer",
+    subHeading: "LXI Technologies, Palakkad, Kerala, India",
     content:
-      "Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.",
-    workExperience: "December 2011 - March 2013",
-  },
-  {
-    heading: "Junior Web Designer",
-    subHeading: "Shout! Media Productions",
-    content:
-      "Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.",
-    workExperience: "July 2010 - December 2011",
+      "Prepared and submitted reports and other documentation to assist development team members. Able to learn java and it's object oriented behavior with some real life examples. Worked with more than 2 teams for understanding project workflows and client-server relationship",
+    workExperience: "March 2018 - November 2018",
   },
 ];
 
@@ -56,7 +49,7 @@ export const skillData = [
     name: "fab fa-js-square",
   },
   {
-    name: "fab fa-angular",
+    name: "fab fa-git",
   },
   {
     name: "fab fa-react",
@@ -71,15 +64,25 @@ export const skillData = [
 
 export const workflowContent = [
   {
-    content: "Mobile-First, Responsive Design",
+    content: "Creating Reusable Components using React JS",
   },
   {
     content: "Cross Browser Testing & Debugging",
   },
   {
-    content: "Cross Functional Teams",
+    content: "Mobile-First, Responsive Design",
   },
   {
-    content: "Agile Development & Scrum",
+    content: "Agile Development",
+  },
+];
+
+export const educationData = [
+  {
+    subHeading: "Bachelor of Technology",
+    heading: "APJ Abdul Kalam Technological University - Kerala, India",
+    course: "Computer Science and Engineering",
+    grade: "7.34",
+    duration: "August 2015 - August 2019",
   },
 ];

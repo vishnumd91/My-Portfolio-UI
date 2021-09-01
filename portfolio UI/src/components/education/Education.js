@@ -1,32 +1,41 @@
-import React from 'react';
+import React from "react";
+import { educationData } from "../../constants";
 
 function Education() {
+  const educationDetails = educationData || [];
+
   return (
-    <div className='container-fluid'>
-            <section className="resume-section" id="education">
-                <div className="resume-section-content">
-                    <h2 className="mb-5">Education</h2>
-                    <div className="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div className="flex-grow-1">
-                            <h3 className="mb-0">University of Colorado Boulder</h3>
-                            <div className="subheading mb-3">Bachelor of Science</div>
-                            <div>Computer Science - Web Development Track</div>
-                            <p>GPA: 3.23</p>
-                        </div>
-                        <div className="flex-shrink-0"><span className="text-primary">August 2006 - May 2010</span></div>
+    <div className="container-fluid">
+      <section className="resume-section" id="education">
+        <div className="resume-section-content">
+          <h2 className="mb-5">Education</h2>
+          <div className="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div className="flex-grow-1">
+              {educationDetails.map((education, index) => {
+                return (
+                  <div key={index}>
+                    <h3 className="mb-0">{education.heading}</h3>
+                    <div className="subheading mb-3">
+                      {education.subHeading}
                     </div>
-                    <div className="d-flex flex-column flex-md-row justify-content-between">
-                        <div className="flex-grow-1">
-                            <h3 className="mb-0">James Buchanan High School</h3>
-                            <div className="subheading mb-3">Technology Magnet Program</div>
-                            <p>GPA: 3.56</p>
-                        </div>
-                        <div className="flex-shrink-0"><span className="text-primary">August 2002 - May 2006</span></div>
-                    </div>
-                </div>
-            </section>
+                    <div>{education.course}</div>
+                    <p>{`GPA: ${education.grade}`}</p>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="flex-shrink-0">
+              {educationDetails.map((education, index) => {
+                return (
+                  <span key={index} className="text-primary">{education.duration}</span>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  )
+  );
 }
 
-export default Education
+export default Education;
