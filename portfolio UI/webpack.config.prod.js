@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 const { merge } = require("webpack-merge");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+
 const TerserPlugin = require("terser-webpack-plugin");
 
 const common = require("./webpack.config.common");
@@ -30,13 +31,16 @@ module.exports = merge(common, {
       },
     },
     minimizer: [
-      new OptimizeCssAssetsPlugin({
-        cssProcessorOptions: {
-          map: {
-            inline: false,
-            annotation: true,
+      new CssMinimizerPlugin({
+        minimizerOptions: {
+          processorOptions: {
+            parser: "sugarss",
           },
         },
+        minify: [
+          CssMinimizerPlugin.cleanCssMinify,
+          CssMinimizerPlugin.cleanCssMinify,
+        ],
       }),
       new TerserPlugin({
         // Use multi-process parallel running to improve the build speed
