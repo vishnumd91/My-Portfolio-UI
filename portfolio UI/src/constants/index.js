@@ -15,10 +15,6 @@ export const navigationData = [
     id: 4,
     heading: "Skills",
   },
-  {
-    id: 5,
-    heading: "Interests",
-  },
 ];
 
 export const experienceData = [
