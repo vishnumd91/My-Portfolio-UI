@@ -2,11 +2,12 @@
 const HTMLPlugin = require("html-webpack-plugin");
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 const webpack = require("webpack");
 const dotenv = require("dotenv");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 dotenv.config();
 
@@ -70,9 +71,17 @@ module.exports = {
       NODE_ENV: JSON.stringify(process.env.NODE_ENV),
     }),
     new BundleAnalyzerPlugin({
-      analyzerMode: 'disabled',
+      analyzerMode: "disabled",
       generateStatsFile: true,
-      statsOptions: { source: false }
+      statsOptions: { source: false },
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "public/assets"),
+          to: path.resolve(__dirname, "build"),
+        },
+      ],
     }),
   ],
 };
