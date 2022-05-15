@@ -1,10 +1,11 @@
 import React from "react";
-import Experience from '../experience/Experience';
-import About from '../about/About';
-import Education from '../education/Education';
+import Experience from "../experience/Experience";
+import About from "../about/About";
+import Education from "../education/Education";
+import profilePic from "../../../public/assets/profile.jpg";
 
 import { navigationData } from "/src/constants";
-import Skills from '../skills/Skills';
+import Skills from "../skills/Skills";
 
 function Navigation() {
   const navigationHeading = navigationData || {};
@@ -20,7 +21,7 @@ function Navigation() {
           <span className="d-none d-lg-block">
             <img
               className="img-fluid img-profile rounded-circle mx-auto mb-2"
-              src="public\assets\profile.jpg"
+              src={profilePic}
               alt=""
             />
           </span>
