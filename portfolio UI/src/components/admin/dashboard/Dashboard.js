@@ -1,7 +1,7 @@
 import { Grid } from "@material-ui/core";
 import React from "react";
-import CardItem from "./Card";
-import NavBar from "./Navbar";
+import CardItem from "../card/Card";
+import NavBar from "../../../layout/adminNavBar";
 
 const Dashboard = () => {
   return (
@@ -15,13 +15,13 @@ const Dashboard = () => {
             buttonText="Add"
           />
         </Grid>
-        <Grid item sm={6}>
+        {/* <Grid item sm={6}>
           <CardItem
             title="Edit Details"
             description="Click this card to edit the details that are already added"
             buttonText="Edit"
           />
-        </Grid>
+        </Grid> */}
       </Grid>
     </div>
   );
