@@ -1,5 +1,9 @@
 /* eslint-disable no-undef */
 const { merge } = require("webpack-merge");
+const path = require("path");
+// const { whenProd } = require('@craco/craco');
+const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
+
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const TerserPlugin = require("terser-webpack-plugin");
@@ -52,6 +56,19 @@ module.exports = merge(common, {
           compress: {},
           mangle: true, // Note `mangle.properties` is `false` by default.
           module: false,
+        },
+      }),
+      new HtmlCriticalWebpackPlugin({
+        base: path.resolve(__dirname, "build"),
+        src: "index.html",
+        dest: "index.html",
+        inline: true,
+        minify: true,
+        extract: true,
+        width: 320,
+        height: 565,
+        penthouse: {
+          blockJSRequests: false,
         },
       }),
     ],
