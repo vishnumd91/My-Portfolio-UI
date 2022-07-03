@@ -1,4 +1,5 @@
 import React from "react";
+import profile from "../../public/assets/profile.jpg";
 
 import { makeStyles } from "@material-ui/core/styles";
 import {
@@ -23,11 +24,10 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     marginLeft: "auto",
     marginRight: theme.spacing(3),
-  }
+  },
 }));
 
 const NavBar = () => {
-
   const classes = useStyles();
 
   return (
@@ -36,16 +36,17 @@ const NavBar = () => {
         <Typography variant="h6" component="span" className={classes.textColor}>
           Portfolio Admin
         </Typography>
-        <IconButton aria-label="show 17 new notifications" color="inherit" className={classes.icon}>
-          <Badge badgeContent={17} color="secondary">
+        <IconButton
+          aria-label="show 17 new notifications"
+          color="inherit"
+          className={classes.icon}
+        >
+          <Badge badgeContent={17} color="secondary" overlap="rectangular">
             <NotificationsIcon />
           </Badge>
         </IconButton>
         <Typography variant="h6" component="span" className={classes.textColor}>
-          <Avatar
-            alt="Vishnu M D"
-            src="http://localhost:3000/public/assets/profile.jpg"
-          />
+          <Avatar alt="Vishnu M D" src={profile} />
         </Typography>
       </Toolbar>
     </AppBar>

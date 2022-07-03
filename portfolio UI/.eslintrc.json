@@ -1,6 +1,8 @@
 {
     "env": {
-        "es2021": true
+        "es2021": true,
+        "browser": true,
+        "node": true
     },
     "extends": [
         "eslint:recommended",
@@ -17,5 +19,6 @@
         "react"
     ],
     "rules": {
+        "react/prop-types": "off"
     }
 }
