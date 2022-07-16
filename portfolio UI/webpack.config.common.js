@@ -7,7 +7,7 @@ const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const webpack = require("webpack");
 const dotenv = require("dotenv");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { NetlifyPlugin } = require("netlify-webpack-plugin");
+// const { NetlifyPlugin } = require("netlify-webpack-plugin");
 
 dotenv.config();
 
@@ -76,15 +76,15 @@ module.exports = {
       generateStatsFile: true,
       statsOptions: { source: false },
     }),
-    new NetlifyPlugin({
-      redirects: [
-        {
-          from: "/*",
-          to: "/index.html",
-          status: 200,
-          force: true,
-        },
-      ],
-    }),
+    // new NetlifyPlugin({
+    //   redirects: [
+    //     {
+    //       from: "/*",
+    //       to: "/index.html",
+    //       status: 200,
+    //       force: true,
+    //     },
+    //   ],
+    // }),
   ],
 };
