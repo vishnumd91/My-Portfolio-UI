@@ -7,7 +7,7 @@ export const AdminLogin = () => {
 
   const [password, setPassword] = useState("");
 
-  const navigate = useNavigater();
+  const navigate = useNavigate();
 
   const handleInputChange = (event) => {
     setUserName(event.target.value);
