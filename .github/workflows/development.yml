@@ -1,5 +1,5 @@
 # Name of workflow
-name: Development workflow
+name: Development CI Pipeline
 
 # When workflow is triggered
 on:
