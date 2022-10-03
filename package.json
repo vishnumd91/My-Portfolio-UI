@@ -11,7 +11,7 @@
     "analyze": "webpack-bundle-analyzer --port 5002 build/stats.json",
     "test": "jest",
     "coverage": "jest --coverage",
-    "test:ci": "set CI=true && coverage"
+    "test:ci": "set CI=true && npm run coverage"
   },
   "repository": {
     "type": "git",
