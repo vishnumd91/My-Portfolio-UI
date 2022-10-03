@@ -10,7 +10,8 @@
     "lint": "eslint src/**/*.js",
     "analyze": "webpack-bundle-analyzer --port 5002 build/stats.json",
     "test": "jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "test:ci": "set CI=true && npm run coverage"
   },
   "repository": {
     "type": "git",
