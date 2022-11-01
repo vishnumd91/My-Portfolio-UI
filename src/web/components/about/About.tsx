@@ -1,6 +1,6 @@
-import React from "react";
+import React, { FC } from "react";
 
-export const About = () => {
+export const About: FC = () => {
   return (
     <div className="container-fluid p-0">
       {/* <!-- About--> */}

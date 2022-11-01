@@ -1,6 +1,6 @@
-import React from "react";
+import React, { FC } from "react";
 
-export const PageNotFound = () => {
+export const PageNotFound: FC = () => {
   return (
     <div style={{ textAlign: "center" }}>
       <h1>404 - Page Not Found</h1>

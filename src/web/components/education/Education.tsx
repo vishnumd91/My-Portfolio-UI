@@ -1,7 +1,7 @@
-import React from "react";
+import React, { FC } from "react";
 import { educationData } from "../../constants";
 
-export const Education = () => {
+export const Education: FC = () => {
   const educationDetails = educationData || [];
 
   return (
@@ -11,15 +11,15 @@ export const Education = () => {
           <h2 className="mb-5">Education</h2>
           <div className="d-flex flex-column flex-md-row justify-content-between mb-5">
             <div className="flex-grow-1">
-              {educationDetails.map((education, index) => {
+              {educationDetails?.map((education, index) => {
                 return (
                   <div key={index}>
                     <h3 className="mb-0">{education.heading}</h3>
                     <div className="subheading mb-3">
-                      {education.subHeading}
+                      {education?.subHeading}
                     </div>
-                    <div>{education.course}</div>
-                    <p>{`GPA: ${education.grade}`}</p>
+                    <div>{education?.course}</div>
+                    <p>{`GPA: ${education?.grade}`}</p>
                   </div>
                 );
               })}
