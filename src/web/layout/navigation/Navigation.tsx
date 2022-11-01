@@ -1,10 +1,11 @@
-import React from "react";
-import profilePic from "../../images/profile.jpg";
+import React, { ReactElement } from "react";
+import profilePic from "../../../../public/assets/profile.jpg";
 
 import { navigationData } from "../../constants/index";
+import { NavigationInputs } from "../../types/types";
 
-export const Navigation = () => {
-  const navigationHeading = navigationData || {};
+export const Navigation = (): ReactElement => {
+  const navigationHeading: NavigationInputs[] = navigationData || [];
 
   return (
     <div id="page-top">
@@ -18,7 +19,7 @@ export const Navigation = () => {
             <img
               className="img-fluid img-profile rounded-circle mx-auto mb-2"
               src={profilePic}
-              alt=""
+              alt="Profile Picture"
             />
           </span>
         </a>
@@ -35,7 +36,7 @@ export const Navigation = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav">
-            {navigationHeading.map((headings) => (
+            {navigationHeading.map((headings: NavigationInputs) => (
               <li key={headings.id} className="nav-item nav-link">
                 <a
                   href={`#${headings.heading.toLowerCase()}`}

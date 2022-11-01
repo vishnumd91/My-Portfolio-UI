@@ -1,10 +1,10 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { skillData, workflowContent } from "../../constants";
 
-export const Skills = () => {
-  const skillInputs = skillData || {};
+export const Skills = (): ReactElement => {
+  const skillInputs = skillData || [];
 
-  const workflowInputs = workflowContent || {};
+  const workflowInputs = workflowContent || [];
 
   return (
     <div className="container-fluid p-0">
@@ -14,12 +14,12 @@ export const Skills = () => {
           <h2 className="mb-5">Skills</h2>
           <div className="subheading mb-3">Programming Languages & Tools</div>
           <ul className="list-inline dev-icons">
-            {skillInputs.map((data, index) => {
+            {skillInputs?.map((data, index) => {
               return (
                 <li key={index} className="list-inline-item">
                   <i
                     style={{ marginRight: "1rem" }}
-                    className={`${data.name}`}
+                    className={`${data?.name}`}
                   ></i>
                 </li>
               );
@@ -27,13 +27,13 @@ export const Skills = () => {
           </ul>
           <div className="subheading mb-3">Workflow</div>
           <ul className="fa-ul mb-0">
-            {workflowInputs.map((data, index) => {
+            {workflowInputs?.map((data, index) => {
               return (
                 <li key={index}>
                   <span className="fa-li">
                     <i className="fas fa-check"></i>
                   </span>
-                  {data.content}
+                  {data?.content}
                 </li>
               );
             })}

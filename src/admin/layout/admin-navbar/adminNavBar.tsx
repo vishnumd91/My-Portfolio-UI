@@ -1,5 +1,5 @@
-import React from "react";
-import profile from "../../images/profile.jpg";
+import React, { ReactElement } from "react";
+import profilePic from "../../../../public/assets/profile.jpg";
 
 import { makeStyles } from "@material-ui/core/styles";
 import {
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const AdminNavBar = () => {
+export const AdminNavBar = (): ReactElement => {
   const classes = useStyles();
 
   return (
@@ -46,7 +46,7 @@ export const AdminNavBar = () => {
           </Badge>
         </IconButton>
         <Typography variant="h6" component="span" className={classes.textColor}>
-          <Avatar alt="Vishnu M D" src={profile} />
+          <Avatar alt="Vishnu M D" src={profilePic} />
         </Typography>
       </Toolbar>
     </AppBar>

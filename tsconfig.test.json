@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "declarationDir": "build",
+    "downlevelIteration": true,
+    "esModuleInterop": true
+  },
+  "exclude": ["node_modules"]
+}

@@ -12,7 +12,7 @@ dotenv.config();
 
 module.exports = {
   entry: {
-    app: "./src/index.js",
+    app: "./src/index.tsx",
   },
 
   output: {
@@ -32,6 +32,11 @@ module.exports = {
         ],
       },
       {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
+      {
         test: /\.html$/,
         use: [
           {
@@ -39,7 +44,6 @@ module.exports = {
           },
         ],
       },
-
       {
         test: /\.(.png|jpe?g|gif)$/i,
         use: [
@@ -48,12 +52,15 @@ module.exports = {
           },
         ],
       },
-
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
     ],
+  },
+
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
   },
 
   plugins: [
