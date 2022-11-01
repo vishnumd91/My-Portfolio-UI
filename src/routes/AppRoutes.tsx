@@ -1,11 +1,11 @@
-import React, { FC } from "react";
+import React, { ReactElement } from "react";
 import { Route, Routes } from "react-router-dom";
 import { AdminView } from "../admin/layout/admin-view/adminView";
 import { AdminLogin } from "../admin/components/login";
 import { AppView } from "../web/layout";
 import { PageNotFound } from "../common/page-not-found";
 
-export const AppRoutes: FC = () => {
+export const AppRoutes = (): ReactElement => {
   return (
     <Routes>
       {/* Web App Home Page Route */}

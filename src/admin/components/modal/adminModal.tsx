@@ -87,7 +87,7 @@ export const AdminModal = (): ReactElement => {
   const onChecked = () => {
     setExperienceInputs({
       ...experienceInputs,
-      isCurrent: !experienceInputs.isCurrent,
+      isCurrent: !experienceInputs?.isCurrent,
       endDate: "",
     });
   };
@@ -203,13 +203,13 @@ export const AdminModal = (): ReactElement => {
                 shrink: true,
               }}
               onChange={handleInputChange}
-              disabled={experienceInputs.isCurrent}
-              required={!experienceInputs.isCurrent}
+              disabled={experienceInputs?.isCurrent}
+              required={!experienceInputs?.isCurrent}
             />
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={experienceInputs.isCurrent}
+                  checked={experienceInputs?.isCurrent}
                   onChange={onChecked}
                   name="isCurrent"
                   color="primary"
