@@ -1,23 +1,26 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, FormEvent, ReactElement, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { AdminLoginType } from "../../types/adminLogin.types";
 import "./AdminLogin.css";
 
-export const AdminLogin = () => {
-  const [userName, setUserName] = useState("");
+export const AdminLogin = (): ReactElement => {
+  const [loginCredentials, setLoginCredentials] = useState<AdminLoginType>({
+    userName: "",
+    password: "",
+  });
 
-  const [password, setPassword] = useState("");
+  const { userName, password } = loginCredentials;
 
   const navigate = useNavigate();
 
-  const handleInputChange = (event) => {
-    setUserName(event.target.value);
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setLoginCredentials({
+      ...loginCredentials,
+      [event.target.name]: event.target.value,
+    });
   };
 
-  const passwordInput = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: FormEvent) => {
     const hardCodedUserName = "admin";
     const hardCodedPassword = "admin";
     event.preventDefault();
@@ -27,9 +30,11 @@ export const AdminLogin = () => {
       // eslint-disable-next-line no-undef
       alert("Wrong Credentials");
     }
-    //Line 33 and 34 clears the text input field after user submits the data to be posted
-    setUserName("");
-    setPassword("");
+    setLoginCredentials({
+      ...loginCredentials,
+      userName: "",
+      password: "",
+    });
   };
 
   return (
@@ -45,6 +50,7 @@ export const AdminLogin = () => {
               type="text"
               className="form-control"
               placeholder="Username"
+              name="userName"
               value={userName}
               autoComplete="off"
               required
@@ -57,10 +63,11 @@ export const AdminLogin = () => {
               type="password"
               className="form-control"
               placeholder="Password"
+              name="password"
               value={password}
               autoComplete="off"
               required
-              onChange={passwordInput}
+              onChange={handleInputChange}
             />
           </div>
           <br></br>

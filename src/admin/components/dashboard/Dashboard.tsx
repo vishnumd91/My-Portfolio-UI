@@ -1,8 +1,8 @@
 import { Grid } from "@material-ui/core";
-import React from "react";
+import React, { ReactElement } from "react";
 import { CardItem } from "../card";
 
-export const AdminDashboard = () => {
+export const AdminDashboard = (): ReactElement => {
   return (
     <div>
       <Grid container>

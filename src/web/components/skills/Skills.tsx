@@ -1,7 +1,7 @@
-import React, { FC } from "react";
+import React, { ReactElement } from "react";
 import { skillData, workflowContent } from "../../constants";
 
-export const Skills: FC = () => {
+export const Skills = (): ReactElement => {
   const skillInputs = skillData || [];
 
   const workflowInputs = workflowContent || [];

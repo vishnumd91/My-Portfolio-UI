@@ -1,9 +1,9 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 import axiosInstance from "../../../api/axiosConfig";
 import { getDateinRequiredFormat } from "../../../utils";
 import { ExperienceType } from "../../types/experience.types";
 
-export const Experience: FC = () => {
+export const Experience = (): ReactElement => {
   const [data, setData] = useState<ExperienceType[]>([]);
   useEffect(() => {
     fetchData();

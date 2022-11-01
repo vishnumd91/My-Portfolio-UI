@@ -1,10 +1,10 @@
-import React, { FC } from "react";
+import React, { ReactElement } from "react";
 import profilePic from "../../../../public/assets/profile.jpg";
 
 import { navigationData } from "../../constants/index";
 import { NavigationInputs } from "../../types/types";
 
-export const Navigation: FC = () => {
+export const Navigation = (): ReactElement => {
   const navigationHeading: NavigationInputs[] = navigationData || [];
 
   return (

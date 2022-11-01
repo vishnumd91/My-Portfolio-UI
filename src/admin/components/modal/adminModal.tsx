@@ -1,4 +1,10 @@
-import React, { useState, useRef } from "react";
+import React, {
+  useState,
+  useRef,
+  ReactElement,
+  ChangeEvent,
+  FormEvent,
+} from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
 import {
@@ -13,6 +19,7 @@ import {
 import { Alert } from "@material-ui/lab";
 import axiosInstance from "../../../api/axiosConfig";
 import { useAppContext } from "../../../context";
+import { ExperienceType } from "../../../web/types/experience.types";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -44,12 +51,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const AdminModal = () => {
+export const AdminModal = (): ReactElement => {
   const { open, setOpen } = useAppContext();
 
   const classes = useStyles();
 
-  const [experienceInputs, setExperienceInputs] = useState({
+  const [experienceInputs, setExperienceInputs] = useState<ExperienceType>({
     company: "",
     position: "",
     startDate: "",
@@ -62,9 +69,9 @@ export const AdminModal = () => {
 
   const [submitResponse, setSubmitResponse] = useState(false);
 
-  const formRef = useRef();
+  const formRef = useRef(null!);
 
-  const handleClose = (event, reason) => {
+  const handleClose = (event: unknown, reason: string) => {
     if (reason === "clickaway") {
       return;
     }
@@ -72,7 +79,7 @@ export const AdminModal = () => {
     setSubmitResponse(false);
   };
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setExperienceInputs({ ...experienceInputs, [name]: value });
   };
@@ -85,7 +92,7 @@ export const AdminModal = () => {
     });
   };
 
-  const addExperience = (event) => {
+  const addExperience = (event: FormEvent) => {
     event.preventDefault();
     const {
       company,
@@ -215,7 +222,7 @@ export const AdminModal = () => {
               variant="contained"
               color="primary"
               type="submit"
-              onClick={() => formRef.current.reportValidity()}
+              onClick={() => formRef?.current?.reportValidity()}
             >
               Submit
             </Button>
@@ -227,7 +234,7 @@ export const AdminModal = () => {
         autoHideDuration={3000}
         onClose={handleClose}
       >
-        <Alert variant="filled" severity="success" onClose={handleClose}>
+        <Alert variant="filled" severity="success" onClose={() => handleClose}>
           Experience Added Successfully!
         </Alert>
       </Snackbar>

@@ -1,7 +1,7 @@
-import React, { FC } from "react";
+import React, { ReactElement } from "react";
 import { educationData } from "../../constants";
 
-export const Education: FC = () => {
+export const Education = (): ReactElement => {
   const educationDetails = educationData || [];
 
   return (

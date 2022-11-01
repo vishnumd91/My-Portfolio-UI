@@ -6,6 +6,6 @@ export type ExperienceType = {
   description: string;
   startDate: string;
   endDate: string;
-  _id: string;
-  isCurrent: string;
+  _id?: string;
+  isCurrent: boolean;
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
 import {
@@ -11,6 +11,7 @@ import {
 } from "@material-ui/core";
 import AdminModal from "../modal/adminModal";
 import { useAppContext } from "../../../context";
+import { CardType } from "../../types/card.types";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -29,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const CardItem = (props) => {
+export const CardItem = (props: CardType): ReactElement => {
   const classes = useStyles();
 
   const { title, description, buttonText } = props;

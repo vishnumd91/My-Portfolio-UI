@@ -12,7 +12,7 @@ dotenv.config();
 
 module.exports = {
   entry: {
-    app: "./src/index.js",
+    app: "./src/index.tsx",
   },
 
   output: {
