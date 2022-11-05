@@ -1,9 +1,11 @@
 import React, { ChangeEvent, FormEvent, ReactElement, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAdminContext } from "../../../context";
 import { AdminLoginType } from "../../types/adminLogin.types";
 import "./AdminLogin.css";
 
 export const AdminLogin = (): ReactElement => {
+  const { setIsLoggedIn } = useAdminContext();
   const [loginCredentials, setLoginCredentials] = useState<AdminLoginType>({
     userName: "",
     password: "",
@@ -21,13 +23,11 @@ export const AdminLogin = (): ReactElement => {
   };
 
   const handleSubmit = (event: FormEvent) => {
-    const hardCodedUserName = "admin";
-    const hardCodedPassword = "admin";
     event.preventDefault();
-    if (userName === hardCodedUserName && password === hardCodedPassword) {
+    if (userName === "admin" && password === "admin") {
+      setIsLoggedIn(true);
       navigate("/dashboard");
     } else {
-      // eslint-disable-next-line no-undef
       alert("Wrong Credentials");
     }
     setLoginCredentials({

@@ -1,6 +1,6 @@
 import { Dispatch, ReactNode } from "react";
 
-export type AppContextType = {
+export type AdminContextType = {
   open: boolean;
   setOpen: Dispatch<boolean>;
   isLoggedIn: boolean;
