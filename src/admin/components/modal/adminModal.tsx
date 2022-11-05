@@ -18,7 +18,7 @@ import {
 } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
 import axiosInstance from "../../../api/axiosConfig";
-import { useAppContext } from "../../../context";
+import { useAdminContext } from "../../../context";
 import { ExperienceType } from "../../../web/types/experience.types";
 
 const useStyles = makeStyles((theme) => ({
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const AdminModal = (): ReactElement => {
-  const { open, setOpen } = useAppContext();
+  const { open, setOpen } = useAdminContext();
 
   const classes = useStyles();
 

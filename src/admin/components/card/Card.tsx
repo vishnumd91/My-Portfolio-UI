@@ -10,7 +10,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import AdminModal from "../modal/adminModal";
-import { useAppContext } from "../../../context";
+import { useAdminContext } from "../../../context";
 import { CardType } from "../../types/card.types";
 
 const useStyles = makeStyles((theme) => ({
@@ -35,7 +35,7 @@ export const CardItem = (props: CardType): ReactElement => {
 
   const { title, description, buttonText } = props;
 
-  const { setOpen } = useAppContext();
+  const { setOpen } = useAdminContext();
 
   return (
     <>

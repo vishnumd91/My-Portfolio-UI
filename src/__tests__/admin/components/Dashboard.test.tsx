@@ -1,13 +1,13 @@
 import { render } from "@testing-library/react";
 import React from "react";
 import { AdminDashboard } from "../../../admin/components/dashboard";
-import { AppContextProvider } from "../../../context";
+import { AdminContextProvider } from "../../../context";
 
 const Mock = () => {
   return (
-    <AppContextProvider>
+    <AdminContextProvider>
       <AdminDashboard />
-    </AppContextProvider>
+    </AdminContextProvider>
   );
 };
 

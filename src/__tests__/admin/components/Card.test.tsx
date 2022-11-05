@@ -1,13 +1,13 @@
 import { render } from "@testing-library/react";
 import React from "react";
 import { CardItem } from "../../../admin/components/card";
-import { AppContextProvider } from "../../../context";
+import { AdminContextProvider } from "../../../context";
 
 const Mock = () => {
   return (
-    <AppContextProvider>
+    <AdminContextProvider>
       <CardItem title="title" description="some desc" buttonText="Add" />
-    </AppContextProvider>
+    </AdminContextProvider>
   );
 };
 
