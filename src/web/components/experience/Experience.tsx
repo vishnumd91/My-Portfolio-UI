@@ -1,29 +1,32 @@
 import React, { ReactElement, useEffect, useState } from "react";
+import { useQuery } from "react-query";
 import axiosInstance from "../../../api/axiosConfig";
+import { getExperienceData } from "../../../services";
 import { getDateinRequiredFormat } from "../../../utils";
 import { ExperienceType } from "../../types/experience.types";
 
 export const Experience = (): ReactElement => {
-  const [data, setData] = useState<ExperienceType[]>([]);
-  useEffect(() => {
-    fetchData();
-    return () => {
-      setData([]);
-    };
-  }, []);
+  const [error, setError] = useState<unknown>();
 
-  const fetchData = async () => {
-    const response = await axiosInstance.get("/portfolio/experience");
-    if (response.status === 200) return setData(response.data);
-    return setData(null);
-  };
+  const { data: experienceData } = useQuery(
+    "experience",
+    async () => {
+      const response: ExperienceType[] = await getExperienceData();
+      return response;
+    },
+    {
+      onError: (err: unknown) => {
+        setError(err);
+      },
+    }
+  );
 
   return (
     <div className="container-fluid p-0">
       <section className="resume-section" id="experience">
         <div className="resume-section-content">
           <h2 className="mb-5">Experience</h2>
-          {data.map((experienceInputs) => {
+          {experienceData?.map((experienceInputs) => {
             const {
               position,
               country,

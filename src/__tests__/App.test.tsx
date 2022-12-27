@@ -1,12 +1,16 @@
 import { render } from "@testing-library/react";
 import React from "react";
+import { QueryClientProvider } from "react-query";
 import { BrowserRouter } from "react-router-dom";
 import App from "../App";
+import { queryClient } from "../utils";
 
 const Mock = () => {
   return (
     <BrowserRouter>
-      <App />
+      <QueryClientProvider client={queryClient}>
+        <App />
+      </QueryClientProvider>
     </BrowserRouter>
   );
 };
